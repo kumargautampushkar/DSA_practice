@@ -39,6 +39,27 @@ int binary_search_recursion(vector<int> &v,int key, int low, int hi)
 }
 
 
+int binary_search_iteration(vector <int> &v,int key){
+    int low=0;
+    int hi=v.size()-1;
+    int mid=(low+hi)/2;
+    int index=-1;
+    while(low<hi){
+        mid=(low+hi)/2;
+        if(key==v[mid]){
+            index=mid;
+            return index;
+        }
+        else if(key<v[mid]){
+            hi=mid-1;
+        }
+        else if(key>v[mid]){
+            low=mid+1;
+        }
+    }
+    return index;
+}
+
 int main(int argc, char const *argv[])
 {
     int n;
@@ -47,7 +68,11 @@ int main(int argc, char const *argv[])
     inputarr(v,n);
     int key;
     cin>>key;
+    cout<<"Found at(recursive) ";
     cout<<binary_search_recursion(v,key,0,n-1)<<endl;
+
+    cout<<"Found at(iterative) ";
+    cout<<binary_search_iteration(v,key);
 
     return 0;
 }
