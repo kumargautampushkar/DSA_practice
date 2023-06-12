@@ -43,14 +43,14 @@ void printarr(vector<vector<int>> &v){
 bool matrix_binary_search(vector <vector<int>> &v, int key){
     int m=v.size();
     int n=v[0].size();
-    //cout<<m<<" "<<n<<endl;
+
     int low1=0,hi1=m-1;
     int mid1=(low1+hi1)/2;
     bool flag1=false;
     int row=-1;
-    while(low1<hi1){
+    while(low1<=hi1){
         mid1=(low1+hi1)/2;
-        
+        cout<<v[mid1][0]<<" "<<v[mid1][n-1]<<endl;
         if((v[mid1][0]<= key) && (key<=v[mid1][n-1])){
             flag1=true;
             row=mid1;
@@ -63,11 +63,10 @@ bool matrix_binary_search(vector <vector<int>> &v, int key){
         else if(key>v[mid1][0] && key>v[mid1][n-1])
         {
             low1=mid1+1;
-
         }
     }
-    // cout<<endl;
-    cout<<"Row: "<<row<<endl;
+
+    
     if(flag1==false){
         return false;
         cout<<"false"<<endl;
@@ -90,6 +89,8 @@ bool matrix_binary_search(vector <vector<int>> &v, int key){
             hi=mid-1;
         }
     }
+    //cout<<"Row: "<<row<<endl;
+    //cout<<"col: "<<col<<endl;
     return flag2;
 }
 
