@@ -48,7 +48,7 @@ int binary_search_iteration(vector <int> &v,int key){
         mid=(low+hi)/2;
         if(key==v[mid]){
             index=mid;
-            return index;
+            break;
         }
         else if(key<v[mid]){
             hi=mid-1;
