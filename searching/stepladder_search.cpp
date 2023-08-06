@@ -47,7 +47,9 @@ bool step_ladder_search(vector <vector<int>> &v,int key){
 
     bool flag=false;
     int i=0,j=q-1;
-    while(i<p-1 && j>=0){
+    //cout<<i<<" "<<j<<endl;
+    //cout<<v[i][j]<<endl;
+    while(i<p && j>=0){
         if(v[i][j]==key){
             flag=true;
             break;

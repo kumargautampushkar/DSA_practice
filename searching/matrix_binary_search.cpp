@@ -75,7 +75,7 @@ bool matrix_binary_search(vector <vector<int>> &v, int key){
     bool flag2=false;
     int low=0,hi=n-1,mid=(low+hi)/2;
     int col=-1;
-    while(low<hi){
+    while(low<=hi){
         mid=(low+hi)/2;
         if(v[row][mid]==key){
             flag2=true;
