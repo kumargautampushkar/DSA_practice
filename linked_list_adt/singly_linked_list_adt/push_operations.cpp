@@ -11,6 +11,14 @@ void printlist(node * hd){
     cout<<endl;
 }
 
+int size(node * head){
+    int count=0;
+    while(head!=nullptr){
+        count++;
+        head=head->next;
+    }
+    return count;
+}
 
 
 void pushfront(node ** hd ,int x){
@@ -23,7 +31,7 @@ int main(int argc, char const *argv[])
 {
     int k;
     cin>>k;
-    node * head=nullptr;
+    node * head = nullptr;
 
     for(int i=0;i<k;i++){
         int t;
